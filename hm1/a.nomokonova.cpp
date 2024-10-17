@@ -3,23 +3,25 @@
 
 int main() 
 { 
-    int  i = 0; int b = 1; 
-    double a[10]; 
-    for (i = 0; i < 10; i++) 
+    const int arr_size = 10;
+    int a[arr_size];
+    for (int i = 0; i < arr_size; i++) 
     { 
-        std::cout << "введите " << i << " элемент " << std::endl; 
+        std::cout << "введите целочисленные " << i << " элемент " << std::endl; 
         std::cin >> a[i]; 
     } 
-    i = 0;
-    while ((i < 9)) 
+    
+    int i = 0;
+    bool is_increasing = true; 
+    while ((i < arr_size - 1)) 
     { 
         if (a[i] > a[i + 1]) {
-            b = 0; 
+            is_increasing = false; 
             break;
             }
         i++; 
     } 
-    if (b == 1) { 
+    if (is_increasing == true) { 
         std::cout << "последовательность возрастающая"<< std::endl; 
     } 
     else  { 
