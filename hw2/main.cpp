@@ -1,25 +1,13 @@
-#include "io.hpp"
-#include "MySort.hpp"
-#include "utility.hpp"
-
-#include <conio.h>
+#include "print_array.hpp"
+#include "randArray.hpp"
+#include "insert_sort.hpp"
 
 int main() {
-    ILoveProgramming::set_rand();
-
-    int n = ILoveProgramming::random_int(40);
-    int* arr = new int(n);
-    ILoveProgramming::generate_arrange(arr, n, 100);
-
-
-    ILoveProgramming::print("Исходный массив: ", arr, n);
-
-    ILoveProgramming::insertionSort(arr, n);
-
-    ILoveProgramming::print("Отсортированный массив: ", arr, n);
-
-    _getch();
-    delete [] arr;
-
-    return 0;
+    int size = 100;
+    int* arr = new int(size);
+    ILoveProgramming::rand_array(arr, size, 1000);
+    ILoveProgramming::print_array(arr, size);
+    ILoveProgramming::insert_sort(arr, size);
+    ILoveProgramming::print_array(arr, size);
+    delete arr;
 }
