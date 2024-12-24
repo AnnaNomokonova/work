@@ -9,5 +9,5 @@ int main() {
     ILoveProgramming::print_array(arr, size);
     ILoveProgramming::insert_sort(arr, size);
     ILoveProgramming::print_array(arr, size);
-    delete arr;
+    delete[] arr;
 }
