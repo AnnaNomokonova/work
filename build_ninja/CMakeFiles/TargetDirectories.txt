@@ -1,9 +1,0 @@
-/home/anna/proga/work/build_ninja/CMakeFiles/sorting.dir
-/home/anna/proga/work/build_ninja/CMakeFiles/menu.dir
-/home/anna/proga/work/build_ninja/CMakeFiles/test.dir
-/home/anna/proga/work/build_ninja/CMakeFiles/edit_cache.dir
-/home/anna/proga/work/build_ninja/CMakeFiles/rebuild_cache.dir
-/home/anna/proga/work/build_ninja/tests/CMakeFiles/sorting_test.dir
-/home/anna/proga/work/build_ninja/tests/CMakeFiles/test.dir
-/home/anna/proga/work/build_ninja/tests/CMakeFiles/edit_cache.dir
-/home/anna/proga/work/build_ninja/tests/CMakeFiles/rebuild_cache.dir

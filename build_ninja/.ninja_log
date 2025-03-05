@@ -1,9 +1,0 @@
-# ninja log v5
-1	40	1740813896017624279	CMakeFiles/sorting.dir/hw2/insert_sort.cpp.o	a4a5131053ceeba8
-3	40	1740813896017624279	CMakeFiles/menu.dir/menu/menu_items.cpp.o	5b165d8b8808b4d3
-2	238	1740813896216682485	CMakeFiles/menu.dir/menu/menu_functions.cpp.o	d7cfb9783d441697
-1	263	1740813896240689505	CMakeFiles/sorting.dir/hw2/print_array.cpp.o	74b91d899d8dc417
-2	357	1740813896335717291	CMakeFiles/menu.dir/menu/main.cpp.o	9efec06ccf71431f
-1	493	1740813896471757070	CMakeFiles/sorting.dir/hw2/randArray.cpp.o	65f7294679689fc6
-493	543	1740813896519771109	libsorting.a	9cdd848842d0a0e9
-543	625	1740813896601795093	menu	2c6a001d23304ccb
