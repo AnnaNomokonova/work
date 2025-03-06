@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 BUILD_TYPE="Ninja"
 BUILD_SUFFIX="ninja"
 
