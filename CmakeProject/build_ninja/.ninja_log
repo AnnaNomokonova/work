@@ -1,0 +1,13 @@
+# ninja log v5
+9	619	1747953317966194383	longNums/CMakeFiles/longNums_lib.dir/src/long_number.cpp.o	8a305050a44e6b3c
+621	796	1747953318136195312	longNums/liblongNums_lib.a	d31fb267474db908
+16	1606	1747953318952199769	longNums/test/CMakeFiles/ilyatest.dir/ilyatest.cpp.o	68cf8fcec00814ba
+8	2218	1747953319564203112	lib/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	c9b9f5368c17cc48
+6	2341	1747953319687203783	lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	1860f4cbd88fe470
+5	3629	1747953320973210806	lib/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	2d0bb6107f78ea02
+8	6320	1747953323660225471	lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	8180ccbf17effe13
+6320	6410	1747953323751225967	lib/libgtest.a	a90c228d4c27716b
+6410	6473	1747953323817226327	lib/libgtest_main.a	4e341b2bc757cc3d
+6410	6488	1747953323831226404	lib/libgmock.a	713b03b6a17c7d6e
+6488	6553	1747953323897226764	lib/libgmock_main.a	56b5522a351a44b9
+6473	6641	1747953323986227249	longNums/test/ilyatest	f2ff25ccd1ea738c
