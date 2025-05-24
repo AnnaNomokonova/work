@@ -4,14 +4,14 @@ using naa::LongNumber;
 		
 LongNumber::LongNumber() {
 	numbers = nullptr;
-	length = 0;
+	length = 1;
 	sign = 0;
 }
 
 LongNumber::LongNumber(const char* const str) {	
 	if (!str) {
 		numbers = nullptr;
-		length = 0;
+		length = 1;
 		sign = 0;
 		return;
 	}
@@ -70,7 +70,7 @@ LongNumber& LongNumber::operator = (const char* const str) {
 
 	if (!str) {
 		numbers = nullptr;
-		length = 0;
+		length = 1;
 		sign = 0;
 		return *this;
 	}
