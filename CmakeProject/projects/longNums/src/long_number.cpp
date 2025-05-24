@@ -143,7 +143,7 @@ bool LongNumber::operator != (const LongNumber& x) const {
 
 bool LongNumber::operator > (const LongNumber& x) const {
 	if (sign > x.sign) return true;
-	if (sign > x.sign) return false;
+	if (sign < x.sign) return false;
 	if (length > x.length) return (sign == 1);
     if (length < x.length) return (sign == -1);
     
