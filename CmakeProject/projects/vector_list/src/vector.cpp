@@ -15,6 +15,7 @@ Vector<T>::Vector() {
 template<typename T>
 Vector<T>::~Vector() {
 	delete[] arr;
+    arr = nullptr;
 }
 
 template<typename T>

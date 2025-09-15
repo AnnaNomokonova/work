@@ -2,10 +2,8 @@
 #include "long_number.hpp"
 using naa::LongNumber;
 		
-LongNumber::LongNumber() {
-	numbers = nullptr;
-	length = 1;
-	sign = 0;
+LongNumber::LongNumber() : numbers(nullptr), length(1), sign(0) {
+    numbers = new int[length]{0};
 }
 
 LongNumber::LongNumber(const char* const str) {	
@@ -113,6 +111,8 @@ LongNumber& LongNumber::operator = (const LongNumber& x) {
 
 	return *this;
 }
+
+
 
 LongNumber& LongNumber::operator = (LongNumber&& x) {
     if (numbers) {
@@ -410,8 +410,8 @@ int LongNumber::get_digits_number() const noexcept {
 }
 
 int LongNumber::get_rank_number(int rank) const {
-	if (rank < 1) return -1;
-	return numbers[length-rank];
+    if (rank < 1 || rank > length) return -1;  // Защита
+    return numbers[rank - 1];  // Разряды теперь считаются справа налево
 }
 
 bool LongNumber::is_negative() const noexcept {

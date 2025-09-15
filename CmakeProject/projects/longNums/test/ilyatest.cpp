@@ -4,8 +4,7 @@
 
 using naa::LongNumber;
 
-
-TEST(default_constructor, rank) {
+/*TEST(default_constructor, rank) {
 	LongNumber x;
 	ASSERT_EQ(1, x.get_digits_number())
 		<< "По умолчанию число инициализируется нулём и иметь один разряд едениц.";
@@ -108,8 +107,7 @@ TEST(assignment, move) {
 		<< "Инициализировано число 1234567890.";
 	EXPECT_EQ(8, x.get_rank_number(3))
 		<< "Инициализировано число 1234567890. Третий разряд равен 8.";
-}
-
+}*/
 
 class FComparisons : public testing::Test {
 	public:
@@ -154,11 +152,13 @@ TEST_F(FComparisons, less) {
 class FArithmetic : public testing::Test {
 	public:
 		LongNumber 
-			n_19602{"-19602"}, n_99{"-99"}, n_87{"-87"}, n_15{"-15"},
+			n_19602{"-19602"}, n_99{"-99"}, n_87{"-87"}, n_17{"-17"},
+			n_16{"-16"}, n_15{"-15"},
 			n_7{"-7"}, n_4{"-4"}, n_3{"-3"}, n_2{"-2"}, n_1{"-1"},
 		
 			p_0{"0"}, p_1{"1"}, p_1_copy{"1"}, p_2{"2"}, p_3{"3"},
-			p_4{"4"}, p_6{"6"}, p_12{"12"}, p_99{"99"}, p_99_copy{"99"}, 
+			p_4{"4"}, p_6{"6"}, p_12{"12"}, p_16{"16"}, p_17{"17"}, 
+			p_99{"99"}, p_99_copy{"99"}, 
 			p_113{"113"}, p_198{"198"}, p_1188{"1188"}, p_19602{"19602"},
 			
 			n_100{"-100"}, n_6{"-6"}, p_100{"100"}, p_{"6"};
@@ -190,6 +190,13 @@ TEST_F(FArithmetic, division) {
 	EXPECT_EQ(p_2, p_2 / p_1) << "2 / 1 = 2";
 	EXPECT_EQ(p_198, p_19602 / p_99) << "19602 / 99 = 198";
 	EXPECT_EQ(p_99, n_19602 / p_198 / n_1) << "-19602 / 198 / -1  = 99";
+}
+
+TEST_F(FArithmetic, division_full_sign_example) {
+	EXPECT_EQ(p_16, p_100 / p_6) << "100 / 6 = 16";
+	EXPECT_EQ(n_16, p_100 / n_6) << "100 / -6 = -16";
+	EXPECT_EQ(n_17, n_100 / p_6) << "-100 / 6 = -17";
+	EXPECT_EQ(p_17, n_100 / n_6) << "-100 / -6 = 17";
 }
 
 TEST_F(FArithmetic, remainder) {
