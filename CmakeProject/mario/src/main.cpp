@@ -17,6 +17,8 @@ typedef struct SObject {
 
 char map[mapHeight][mapWidth+1];
 TObject mario;
+TObject brick[1];
+
 
 void clearMap ()
 { 
@@ -83,12 +85,14 @@ int main()
     nodelay(stdscr, TRUE);
 
     InitObject(&mario, 39, 10, 3, 3);
+    InitObject(brick, 20, 20, 40,5);
     int key = -1;
 
     do
     {
           clearMap();
           VertMoveObjectOnMap(&mario);
+          PutObjectOnMap(brick[0]);
           PutObjectOnMap(mario);
 
           ShowMap(); 
