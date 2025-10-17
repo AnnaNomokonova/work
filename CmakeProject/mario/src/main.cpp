@@ -83,12 +83,29 @@ void VertMoveObjectOnMap(TObject *obj)
             break;
         }
 }
+void DeleteMoving(int i)
+{
+    movingLength--;
+    moving[i] = moving[movingLength];
+    //moving = realloc( moving, sizeof(*moving) * movingLength);
+    moving = new TObject[movingLength];
+}
 void MarioCollision()
 {
     for (int i = 0; i < movingLength; i++)
         if (IsCollision(mario, moving[i]))
         {
-            CreateLevel(level);
+            if (   (mario.IsFly == true)
+                && (mario.vertSpeed > 0)
+                && (mario.y + mario.height < moving[i].y + moving[i].height * 0.5)
+            )
+            {
+                DeleteMoving(i);
+                i--;
+                continue;
+            }
+            else
+                CreateLevel(level);
         }
 }
 void HorizonMoveObject(TObject *obj)
@@ -210,7 +227,7 @@ int main()
 
           VertMoveObjectOnMap(&mario);
           MarioCollision();
-          
+
           for (int i = 0; i < brickLength; i++)
              PutObjectOnMap(brick[i]);
           for (int i = 0; i < movingLength; i++)
@@ -221,6 +238,7 @@ int main()
           }
           PutObjectOnMap(mario);
 
+          move(0,0);
           ShowMap(); 
 
           
