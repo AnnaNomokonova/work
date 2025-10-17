@@ -153,6 +153,14 @@ bool IsCollision(TObject o1, TObject o2)
     return ((o1.x + o1.width) > o2.x) && ( o1.x < ( o2.x +o2.width)) &&
                     ((o1.y + o1.height) > o2.y) && (o1.y < (o2.y + o2.height));
 }
+
+TObject *GetNewBrick()
+{
+    brickLength++;
+    //brick =(TObject*) realloc(brick, brickLength);
+    brick = new TObject[brickLength];
+    return brick + brickLength - 1;
+}
 void CreateLevel(int lvl)
 {
     InitObject(&mario, 39, 10, 3, 3,'@');
@@ -160,15 +168,15 @@ void CreateLevel(int lvl)
     if (lvl == 1)
     {
 
-        brickLength = 6;
+        brickLength = 0;
         //brick =(TObject*) realloc(brick, brickLength);
         brick = new TObject[brickLength];
-        InitObject(brick+0, 20, 20, 40, 5, '#');
-        InitObject(brick+1, 60, 15, 10, 10, '#');
-        InitObject(brick+2, 80, 20, 30, 5, '#');      //30=20
-        InitObject(brick+3, 120, 15, 20, 10, '#');    //20=10
-        InitObject(brick+4, 150, 20, 40, 5, '#');
-        InitObject(brick+5, 200, 15, 10, 1, '+');     //50=10 200=210
+        InitObject(GetNewBrick(), 20, 20, 40, 5, '#');
+        InitObject(GetNewBrick(), 60, 15, 10, 10, '#');
+        InitObject(GetNewBrick(), 80, 20, 30, 5, '#');      //30=20
+        InitObject(GetNewBrick(), 120, 15, 20, 10, '#');    //20=10
+        InitObject(GetNewBrick(), 150, 20, 40, 5, '#');
+        InitObject(GetNewBrick(), 200, 15, 10, 10, '+');     //50=10 200=210
         movingLength = 1;
         //moving = realloc(moving, sizeof(moving) * movingLength);
         moving = new TObject[movingLength];
@@ -234,6 +242,12 @@ int main()
           {
             VertMoveObjectOnMap(moving + i);
             HorizonMoveObject(moving + i);
+            if (moving[i].y > mapHeight)
+            {
+                DeleteMoving(i);
+                i--;
+                continue;
+            }
             PutObjectOnMap(moving[i]);
           }
           PutObjectOnMap(mario);
